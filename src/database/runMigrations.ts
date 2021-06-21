@@ -5,7 +5,7 @@ import { createConnection } from './connection';
 
 (async () => {
 
-  const { client } = await createConnection();
+  const client = await createConnection();
 
   const fileDatabaseDir = path.join(__dirname, "migrations");
 

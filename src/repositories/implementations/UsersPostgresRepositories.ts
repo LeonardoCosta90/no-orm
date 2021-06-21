@@ -11,7 +11,7 @@ class UsersPostgresRepositories implements IUsersRepositories {
     createConnection().then(connection => (this.client = connection));
   }
   async create({ id, name, email }: User): Promise<void> {
-    await this.client.query("INSER INTO USERS(ID, NAME, EMAIL) VALUE($1, $2, $3)",
+    await this.client.query("INSERT INTO USERS(ID, NAME, EMAIL) VALUES($1, $2, $3)",
       [id, name, email]
     )
   }
