@@ -5,3 +5,7 @@ content-type: application/json
   "name": "Leonardo Everton da Costa",
   "email": "leonardoeverton.tec@gmail.com"
 }
+
+####
+
+GET http://localhost:3000/users/d6eaebe0-58ac-47ee-b22d-fdb6605b7522 HTTP/1.1

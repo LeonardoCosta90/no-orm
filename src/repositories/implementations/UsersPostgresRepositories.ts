@@ -16,6 +16,22 @@ class UsersPostgresRepositories implements IUsersRepositories {
     )
   }
 
+  async findById(idUser: string): Promise<User | null> {
+    const { rows } = await this.client.query("SELECT * FROM USERS WHERE ID = $1 LIMIT 1", [idUser]);
+    if (rows.length > 0) {
+      const { id, name, email } = rows[0];
+
+      const user: User = {
+        id, name, email
+      }
+
+      return user;
+    }
+
+    return null;
+
+  }
+
 }
 
 export { UsersPostgresRepositories };
