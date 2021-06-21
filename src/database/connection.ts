@@ -9,7 +9,7 @@ const createConnection = async () => {
   })
 
   await client.connect();
-  return { client }
+  return client;
 }
 
 export { createConnection };
